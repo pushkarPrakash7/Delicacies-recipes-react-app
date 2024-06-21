@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import categoryList from '../assets/data/CategoryData.js';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 function Category() {
     return (
         <div className='m-16'>

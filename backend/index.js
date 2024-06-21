@@ -26,8 +26,12 @@ main()
 
 //routes
 const ItemRoutes = require("./src/routes/ItemRoutes.js");
+const CategoryRoutes = require("./src/routes/CategoryRoutes.js");
 
-app.use('/api',ItemRoutes)
+
+
+app.use('/api',ItemRoutes);
+app.use('/api/',CategoryRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

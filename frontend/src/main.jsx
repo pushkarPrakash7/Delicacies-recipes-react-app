@@ -7,6 +7,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import SelectedCategory from './pages/SelectedCategory.jsx';
+import Search from './pages/Search.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/categories/:category",
         element: <SelectedCategory/>
+      },
+      {
+        path: "/search",
+        element: <Search />
       }
     ]
   },

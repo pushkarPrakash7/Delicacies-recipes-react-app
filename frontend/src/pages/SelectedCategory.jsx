@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import categoryList from '../assets/data/CategoryData';
 import {Link} from "react-router-dom"
 function SelectedCategory() {
     const {category} = useParams();
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error,setError] = useState(null);
+    
      return (
         <div className='mt-28'>
             <h1 className='text-4xl text-center py-10 capitalize font-semibold sm:leading-relaxed'>{category}</h1>
