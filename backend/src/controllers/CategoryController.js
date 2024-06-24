@@ -1,21 +1,18 @@
-const Category = require('../model/category.models');
 const Item = require("../model/item.models");
 
-const getCategory = async (req,res) =>{
-    const {category} = req.params;
-    try{
-        const categoryData = await Category.findOne({name: category});
-        if(!categoryData){
-            return res.status(404).json({message: "Category Not found!"})
+const getCategory = async (req, res) => {
+    const { category } = req.params;
+    try {
+        const items = await Item.find({ category: category });
+        if (items.length === 0) {
+            return res.status(404).json({ message: "No items found for this category!" });
         }
-        const items = Item.find({menuId : categoryData.menuId})
         res.status(200).json(items);
-    }
-    catch(error){
-        res.status(500).json({message: "No Catgeory Specified"});
+    } catch (error) {
+        res.status(500).json({ message: "An error occurred while fetching the items." });
     }
 }
 
-module.exports={
+module.exports = {
     getCategory,
 }

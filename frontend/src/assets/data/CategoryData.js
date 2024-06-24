@@ -43,7 +43,7 @@ const categoryList = [
         id: 6,
         name: "Snacks",
         image: snacks,
-        href: "/categories/snacks"
+        href: "/categories/sides"
     },
     {
         id: 7,
@@ -55,7 +55,7 @@ const categoryList = [
         id: 8,
         name: "Explore All",
         image: all,
-        href: "/categories/all"
+        href: "/"
     }
 ];
 
