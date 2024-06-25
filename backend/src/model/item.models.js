@@ -22,6 +22,7 @@ const ItemSchema = new mongoose.Schema({
   menuId: { type: Number, required: true },
   name: { type: String, required: true },
   thumbnail_image: { type: String, required: true },
+  description: { type: String, required: true},
   category: { type: String, required: true },
   instructions: { type: String, required: true },
   tags: { type: [String], required: false },

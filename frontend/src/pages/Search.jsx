@@ -3,6 +3,7 @@ import { IoSearch } from 'react-icons/io5';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Card from '../components/Card';
+import Shimmer from '../components/Shimmer';
 function Search() {
     const { searchText } = useParams();
     const [query, setQuery] = useState('');
@@ -63,7 +64,7 @@ function Search() {
             </div>
 
             <ul className='lg:ml-32 my-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-                {loading && <p>Loading...</p>}
+                {loading && <Shimmer/>}
                 {error && <p>{error}</p>}
                 {
                     result && result.map(item => (

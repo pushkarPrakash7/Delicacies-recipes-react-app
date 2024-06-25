@@ -1,3 +1,4 @@
+import FeaturedRecipe from "../components/FeaturedRecipe";
 import Hero from "../components/Hero";
 import Category from "./Category";
 
@@ -8,6 +9,7 @@ function Home() {
         <Hero />
       </div>
       <Category/>
+      <FeaturedRecipe />
     </div>
   );
 }
