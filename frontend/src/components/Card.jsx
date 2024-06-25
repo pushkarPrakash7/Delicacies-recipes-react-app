@@ -18,7 +18,7 @@ const Card = ({ item }) => {
     };
 
     return (
-        <div className='container mx-auto flex justify-center md:justify-start '>
+        <div className='container lg:mx-4 flex justify-center'>
             <div className='h-[350px] w-[300px] shadow-2xl rounded-xl relative'>
                 <img className="w-[300px] h-[200px] rounded-t-xl" src={item.thumbnail_image}></img>
                 <div>

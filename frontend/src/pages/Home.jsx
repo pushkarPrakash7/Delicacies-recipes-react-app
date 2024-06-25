@@ -1,5 +1,6 @@
 import FeaturedRecipe from "../components/FeaturedRecipe";
 import Hero from "../components/Hero";
+import LatestRecipes from "../components/LatestRecipes";
 import Category from "./Category";
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
       </div>
       <Category/>
       <FeaturedRecipe />
+      <LatestRecipes/>
     </div>
   );
 }

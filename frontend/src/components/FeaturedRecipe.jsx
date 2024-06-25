@@ -37,15 +37,15 @@ function FeaturedRecipe() {
     }
 
     return (
-        <div className='overflow-hidden flex flex-col md:flex-row justify-between items-center sm:my-20 my-4 md:gap-12 gap-8 px-8 lg:px-16 lg:w-full'>
+        <div className='overflow-hidden flex flex-col md:flex-row justify-between items-center my-4 sm:my-20 gap-8 md:gap-12 px-4 sm:px-8 lg:px-16'>
             {featuredItem ? (
-                <div className='flex flex-col md:flex-row w-full relative'>
+                <div className='relative flex flex-col md:flex-row w-full'>
                     <div className='w-full md:w-1/2'>
                         <img src={featuredItem.thumbnail_image} alt={featuredItem.name} className='w-full h-auto object-cover rounded-lg' />
                     </div>
-                    <div className='mt-4 md:mt-0 md:ml-8 flex flex-col justify-between w-full md:w-1/2'>
-                        <div>
-                            <p className='text-3xl font-semibold'>{featuredItem.name}</p>
+                    <div className='mt-4 md:mt-0 md:ml-4 flex flex-col justify-between w-full md:w-1/2 lg:pl-8'>
+                        <div className='mt-16'>
+                            <p className='text-2xl lg:text-3xl font-semibold'>{featuredItem.name}</p>
                             <div className='flex gap-2 flex-wrap items-center my-4'>
                                 <p className='bg-primary text-white text-center inline-block capitalize px-2 rounded-md'>{featuredItem.category}</p>
                                 {featuredItem.tags.map((tag, index) => (
@@ -57,11 +57,11 @@ function FeaturedRecipe() {
                                 <p className='text-lg'>{featuredItem.more.cook_time !== "0 minutes" ? featuredItem.more.cook_time : featuredItem.more.prep_time}</p>
                             </div>
                             <p className='mt-4'>
-                                {featuredItem.description.slice(0, 200)} ...<Link to="#" className='text-blue-500 hover:underline'>Read More</Link>
+                                {featuredItem.description.slice(0, 300)} ...<Link to="#" className='text-blue-500 hover:underline'>Read More</Link>
                             </p>
                         </div>
-                        <button className='hover:bg-primary hover:text-white rounded-lg w-full md:w-32 h-12 mt-4 border border-black hover:border-none transition ease-in duration-200'>View Recipe</button>
-                        <span className='inline-block bg-primary text-white px-2 rounded-md py-0.5 absolute top-3 right-3 lg:top-3 lg:right-[640px]'>Featured</span>
+                        <button className='hover:bg-primary hover:text-white rounded-lg w-full md:w-32 h-12 border border-black hover:border-none transition ease-in duration-200 mb-12 sm:mt-4'>View Recipe</button>
+                        <span className='inline-block bg-primary text-white px-2 rounded-md py-0.5 absolute top-3 right-3 md:right-3 lg:top-3 lg:right-[630px]'>Featured</span>
                     </div>
                 </div>
             ) : (
