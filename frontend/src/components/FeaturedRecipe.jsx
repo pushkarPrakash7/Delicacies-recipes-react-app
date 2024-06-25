@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { CiClock2 } from "react-icons/ci";
 import { Link } from 'react-router-dom';
+import Loader from './Loader';
 
 function FeaturedRecipe() {
     const [featuredItem, setFeaturedItem] = useState(null);
@@ -29,7 +30,7 @@ function FeaturedRecipe() {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='flex justify-center my-8'><Loader/></div>;
     }
 
     if (error) {

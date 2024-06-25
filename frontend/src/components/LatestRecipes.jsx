@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../components/Card.jsx';
 import { Link } from 'react-router-dom';
+import Loader from './Loader.jsx';
 
 function FeaturedRecipe() {
     const [ItemList, setItemList] = useState([]);
@@ -28,7 +29,7 @@ function FeaturedRecipe() {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='flex justify-center my-8'><Loader /></div>;
     }
 
     if (error) {
