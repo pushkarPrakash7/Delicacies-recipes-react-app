@@ -11,6 +11,7 @@ import Search from './pages/Search.jsx';
 import SingleItem from './components/SingleItem.jsx';
 import Recipes from './pages/Recipes.jsx';
 import Resources from './pages/Resources.jsx';
+import About from './pages/About.jsx';
 
 
 const router = createBrowserRouter([
@@ -42,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/resources",
-        element: <Resources/>
+        element: <Resources />
+      },
+      {
+        path: "/about",
+        element: <About />
       }
     ]
   },
