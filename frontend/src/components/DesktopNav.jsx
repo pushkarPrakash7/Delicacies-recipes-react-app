@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function DesktopNav({ menuItems, logo }) {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
-    <div className="absolute top-0 w-full z-10">
-      <div className="h-20 bg-transparent flex justify-between items-center px-6 lg:px-12">
+    <div className={`absolute top-0 w-full z-10 ${isHomePage ? 'bg-transparent' : 'bg-black'}`}>
+      <div className="h-20 flex justify-between items-center px-6 lg:px-12">
         <a href="/">
           <img className="h-20 w-20" src={logo} alt="logo" />
         </a>

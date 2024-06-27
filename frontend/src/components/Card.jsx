@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CiClock2 } from "react-icons/ci";
-
+import { PiCookingPotFill } from "react-icons/pi";
 const Card = ({ item }) => {
     const getDifficultyColor = (difficulty) => {
         switch (difficulty.toLowerCase()) {
@@ -18,8 +18,8 @@ const Card = ({ item }) => {
     };
 
     return (
-        <div className='container lg:mx-4 flex justify-center'>
-            <div className='h-[350px] w-[300px] shadow-2xl rounded-xl relative'>
+        <div className='container flex justify-center'>
+            <div className='h-[380px] w-[300px] shadow-2xl rounded-xl relative bg-white'>
                 <img className="w-[300px] h-[200px] rounded-t-xl" src={item.thumbnail_image}></img>
                 <div>
                     <Link to={`/items/${item._id}`}>
@@ -35,9 +35,15 @@ const Card = ({ item }) => {
                             })
                         }
                     </div>
-                    <div className='flex gap-2 mt-4 items-center mx-2'>
-                        <CiClock2 className='font-bold text-xl' />
-                        <p >{item.more.cook_time!=="0 minutes"?item.more.cook_time:item.more.prep_time}</p>
+                    <div className='absolute bottom-1'>
+                        <div className='flex gap-2 mt-4 items-center mx-2'>
+                            <CiClock2 className='font-bold text-xl' />
+                            <p >Cooking time - {item.more.cook_time}</p>
+                        </div>
+                        <div className='flex gap-2 mt-4 items-center mx-2'>
+                            <PiCookingPotFill className='font-bold text-xl' />
+                            <p >Preparation time - {item.more.prep_time}</p>
+                        </div>
                     </div>
                     <div className={`inline-block absolute top-1 right-1 text-center gap-2 mt-2 items-center mx-2 px-2 rounded-md ${getDifficultyColor(item.more.difficulty)}`}>
                         <p className='text-white capitalize'>{item.more.difficulty}</p>
