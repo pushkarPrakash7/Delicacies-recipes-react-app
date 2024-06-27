@@ -7,10 +7,12 @@ import { Link, useLocation } from "react-router-dom";
 function MobileNav({ menuItems, logo, onClose, hideLeft, onOpen }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isAboutPage = location.pathname === "/about";
+  const isContactPage = location.pathname === "/contact";
 
   return (
     <div className="absolute top-0 w-full z-20">
-      <div className={`h-20 ${isHomePage ? 'bg-transparent' : 'bg-black'} flex justify-between items-center px-6 lg:px-12`}>
+      <div className={`h-20 ${isHomePage || isAboutPage || isContactPage ? 'bg-transparent' : 'bg-black'} flex justify-between items-center px-6 lg:px-12`}>
         <a href="/">
           <img className="h-20 w-20" src={logo} alt="Logo" />
         </a>

@@ -21,12 +21,12 @@ function Recipes() {
     }, [])
     console.log(items);
     return (
-        <div className='py-24 w-full md:pt-32 md:px-48 bg-black pb-16'>
+        <div className='py-24 w-full md:pt-32 md:px-16 bg-black pb-16'>
             <h1 className='text-4xl font-bold text-center text-white mb-8'>Discover Our Recipes</h1>
-            <div className='flex justify-center flex-wrap gap-8'>
+            <div className='flex justify-center flex-wrap gap-4'>
                 {
                     items.map((item) => (
-                        <div key={item._id} className='my-4 mx-8 shadow-lg shadow-white rounded-xl'>
+                        <div key={item._id} className='my-4 mx-4 shadow-lg shadow-white rounded-xl'>
                             <Card item={item} ></Card>
                         </div>
                     ))

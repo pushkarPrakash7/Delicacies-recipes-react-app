@@ -37,8 +37,8 @@ function FeaturedRecipe() {
     }
 
     return (
-        <div>
-            <p className='text-3xl w-full font-bold underline ml-4'>Latest Recipes</p>
+        <div className='md:ml-4'>
+            <p className='text-3xl w-full font-bold underline lg:ml-8 text-center md:text-left'>Latest Recipes</p>
             <div className="container lg:mx-4 px-4 py-8">
                 {ItemList.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
