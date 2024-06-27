@@ -14,10 +14,6 @@ async function main() {
   await mongoose.connect(
     `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTER}/${process.env.MONGODB_DB}?retryWrites=true&w=majority&appName=${process.env.MONGODB_DB}`
   );
-
-  app.get("/", (req, res) => {
-    res.send("Veggify Recipes app server");
-  });
 }
 
 main()
@@ -30,6 +26,10 @@ const CategoryRoutes = require("./src/routes/CategoryRoutes.js");
 
 app.use('/api', ItemRoutes);
 app.use('/api', CategoryRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Veggify Recipes app server");
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
