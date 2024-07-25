@@ -5,7 +5,8 @@ import cook1Image from "../assets/cook2.jpg";
 function About() {
     useEffect(()=>{
         window.scrollTo(0, 0);
-    },[])
+    },[]);
+
     return (
         <div className="relative flex flex-col-reverse py-16 mt-16 md:mt-0 lg:pt-0 lg:flex-col lg:pb-0">
             <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
@@ -23,15 +24,15 @@ function About() {
                     alt=""
                 />
             </div>
-            <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+            <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl md:mb-16">
                 <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
                     <p className="inline-block py-px mb-4 text-xl font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
                         About Delcacies
                     </p>
                     <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-primary sm:text-4xl sm:leading-none">
-                        Everything you
+                        Everything you 
                         <br className="hidden md:block" />
-                        can imagine here{' '}
+                        {' '}can imagine here{' '}
                         <span className="inline-block text-deep-purple-accent-400">
                             is delicious.
                         </span>

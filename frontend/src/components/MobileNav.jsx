@@ -12,11 +12,11 @@ function MobileNav({ menuItems, logo, onClose, hideLeft, onOpen }) {
 
   return (
     <div className="absolute top-0 w-full z-20">
-      <div className={`h-20 ${isHomePage || isAboutPage || isContactPage ? 'bg-transparent' : 'bg-black'} flex justify-between items-center px-6 lg:px-12`}>
+      <div className={`h-20 ${isHomePage || isAboutPage || isContactPage ? 'bg-transparent' : 'bg-black'} flex justify-between items-center px-4 lg:px-12`}>
         <a href="/">
-          <img className="h-20 w-20" src={logo} alt="Logo" />
+          <img className="h-16 w-16 md:h-20 md:w-20" src={logo} alt="Logo" />
         </a>
-        <button onClick={onOpen}>
+        <button onClick={onOpen} className="focus:outline-none">
           <HiBars3BottomRight className="w-7 h-7 text-primary" />
         </button>
       </div>
@@ -24,28 +24,29 @@ function MobileNav({ menuItems, logo, onClose, hideLeft, onOpen }) {
       <div
         className={`transition-all w-full h-full fixed bg-black z-50 top-0 ${hideLeft} flex justify-center items-center`}
       >
-        <button onClick={onClose} className="absolute right-8 top-10">
+        <button onClick={onClose} className="absolute right-4 top-8 md:right-8 md:top-10 focus:outline-none">
           <IoClose className="w-7 h-7 text-primary" />
         </button>
-        <div className="mr-52">
-          <img className="h-20 w-20 relative bottom-28" src={logo} alt="Logo" />
-          <ul className="flex flex-col gap-4">
+        <div className="flex flex-col items-center">
+          <img className="h-16 w-16 mb-8" src={logo} alt="Logo" />
+          <ul className="flex flex-col gap-6 text-center">
             {menuItems.map((menu, index) => (
               <li key={index}>
                 <Link
                   to={menu}
-                  className="font-medium capitalize text-primary text-xl"
+                  className="font-medium capitalize text-primary text-lg md:text-xl"
+                  onClick={onClose}
                 >
                   {menu}
                 </Link>
               </li>
             ))}
           </ul>
-          <div className="flex gap-4 my-8">
-            <button className="bg-primary text-white px-4 py-2 rounded-lg">
+          <div className="flex flex-col gap-4 mt-8">
+            <button className="bg-primary text-white px-6 py-2 rounded-lg">
               Login
             </button>
-            <button className="bg-primary text-white px-4 py-2 rounded-lg">
+            <button className="bg-primary text-white px-6 py-2 rounded-lg">
               Sign Up
             </button>
           </div>
