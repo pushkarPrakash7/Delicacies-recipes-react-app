@@ -21,11 +21,11 @@ function SelectedCategory() {
             try {
                 const response = await axios.get(`${base_url}/api/categories/${category}`);
                 setItems(response.data);
-                setError(null); // Clear any previous errors
+                setError(null);
             } catch (error) {
                 setError(error.message || "Error loading category");
             } finally {
-                setLoading(false); // Ensure loading is stopped after request
+                setLoading(false); 
             }
         };
 
@@ -35,21 +35,21 @@ function SelectedCategory() {
     return (
         <div className='mt-16'>
             <h1 className='text-4xl text-center py-10 capitalize font-semibold sm:leading-relaxed'>{category}</h1>
-            <div className='flex flex-wrap gap-8 lg:gap-12 mx-16 justify-center'>
+            <div className='flex flex-wrap gap-8 lg:gap-12 px-1 md:px-0 md:mx-16 justify-center'>
                 {
                     categoryList.map((category, index) => (
                         <div key={index} className='flex flex-col items-center'>
+                        <Link className='hover:text-primary' to={category.href}>
                             <img src={category.image} alt={category.name} className='w-20 h-20 rounded-full' />
-                            <Link className='hover:text-primary' to={category.href}>
-                                <h1 className='text-xl text-center font-semibold '>{category.name}</h1>
-                            </Link>
+                            <h1 className='text-xl text-center font-semibold '>{category.name}</h1>
+                        </Link>
                         </div>
                     ))
                 }
             </div>
             <div className="flex justify-center items-center mt-8">
-                <div className="bg-white rounded-lg w-1/2 lg:w-1/3 h-10 py-1 px-2">
-                    <form action="/search" className="flex">
+                <div className="bg-white rounded-lg w-full lg:w-1/3 h-10 py-1 px-2">
+                    <form action="/search" className="flex mx-2">
                         <input 
                             placeholder="Search your favorite Recipe Here" 
                             className="px-2 w-full h-10 rounded-tl-md rounded-bl-md focus:outline-none bg-gray-300" 

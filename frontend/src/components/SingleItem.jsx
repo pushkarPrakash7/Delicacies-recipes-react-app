@@ -25,11 +25,11 @@ function SingleItem() {
     return (
         <section className='min-h-screen md:flex justify-center items-center bg-black mt-20'>
             <article>
-                <div className='bg-black pb-16'>
+                <div className='bg-black pb-16 rounded-lg'>
                     <picture className='bg-white'>
-                        <img className='px-16 md:px-48 md:pt-8' src={items.thumbnail_image} alt="" />
+                        <img className='px-4 md:px-48 md:pt-8' src={items.thumbnail_image} alt="" />
                     </picture>
-                    <div className='mx-16 md:mx-48 bg-white py-4 px-4 rounded-b-lg'>
+                    <div className='mx-4 md:mx-48 bg-white py-4 px-4 rounded-b-lg'>
                         <p className='text-primary font-semibold text-3xl'>{items.name}</p>
                         <div className='flex my-2 gap-2 flex-wrap'>
                             <span className='bg-primary rounded-lg py-1 px-2 inline-block text-white capitalize'>{items.category}</span>
