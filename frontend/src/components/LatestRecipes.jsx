@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from '../components/Card.jsx';
 import { Link } from 'react-router-dom';
 import Loader from './Loader.jsx';
+import { base_url } from '../Links/links.js';
 
 function FeaturedRecipe() {
     const [ItemList, setItemList] = useState([]);
@@ -12,7 +13,7 @@ function FeaturedRecipe() {
     useEffect(() => {
         const fetchItemList = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/all-items');
+                const response = await axios.get(`${base_url}/api/all-items`);
                 if (response.data && response.data.length > 0) {
                     setItemList(response.data.slice(0, 4)); // Corrected slicing
                 } else {

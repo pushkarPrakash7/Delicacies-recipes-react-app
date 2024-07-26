@@ -6,6 +6,7 @@ import axios from 'axios';
 import Card from '../components/Card';
 import Shimmer from '../components/Shimmer';
 import { IoSearch } from 'react-icons/io5';
+import { base_url } from '../Links/links';
 
 function SelectedCategory() {
     const { category } = useParams();
@@ -18,7 +19,7 @@ function SelectedCategory() {
             setLoading(true);
 
             try {
-                const response = await axios.get(`http://localhost:5000/api/categories/${category}`);
+                const response = await axios.get(`${base_url}/api/categories/${category}`);
                 setItems(response.data);
                 setError(null); // Clear any previous errors
             } catch (error) {

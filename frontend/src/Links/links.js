@@ -1,0 +1,1 @@
+export const base_url = "https://delicacies-recipes-react-app-1.onrender.com"

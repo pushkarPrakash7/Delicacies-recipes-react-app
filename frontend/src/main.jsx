@@ -13,6 +13,7 @@ import Recipes from './pages/Recipes.jsx';
 import Resources from './pages/Resources.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import { base_url } from './Links/links.js';
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/items/:id",
         element: <SingleItem />,
-        loader: ({params}) => fetch(`http://localhost:5000/api/items/${params.id}`)
+        loader: ({params}) => fetch(`${base_url}/api/items/${params.id}`)
       },
       {
         path: "/recipes",

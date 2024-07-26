@@ -7,9 +7,10 @@ function DesktopNav({ menuItems, logo }) {
   const isHomePage = location.pathname === "/";
   const isAboutPage = location.pathname === "/about";
   const isContactPage = location.pathname === "/contact";
+  const isSearchPage = location.pathname === "/search";
 
   return (
-    <div className={`absolute top-0 w-full z-50 ${isHomePage || isAboutPage || isContactPage ? 'bg-transparent' : 'bg-black'}`}>
+    <div className={`absolute top-0 w-full z-50 ${isHomePage || isAboutPage || isContactPage || isSearchPage ? 'bg-transparent' : 'bg-black'}`}>
       <div className="h-20 flex justify-between items-center px-6 lg:px-12">
         <a href="/">
           <img className="h-20 w-20" src={logo} alt="logo" />

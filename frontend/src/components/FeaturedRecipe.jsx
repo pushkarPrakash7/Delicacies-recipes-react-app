@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CiClock2 } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
-
+import { base_url } from '../Links/links';
 function FeaturedRecipe() {
     const [featuredItem, setFeaturedItem] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ function FeaturedRecipe() {
     useEffect(() => {
         const fetchFeaturedItem = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/all-items');
+                const response = await axios.get(`${base_url}/api/all-items`);
                 if (response.data && response.data.length > 0) {
                     const randomIndex = Math.floor(Math.random() * response.data.length);
                     setFeaturedItem(response.data[randomIndex]);

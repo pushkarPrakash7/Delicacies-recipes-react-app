@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Card from '../components/Card';
+import { base_url } from '../Links/links';
 function Recipes() {
     useEffect(() => {
         window.scroll(0, 0);
@@ -10,7 +11,7 @@ function Recipes() {
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/all-items')
+                const response = await axios.get(`${base_url}/api/all-items`)
                 setItems(response.data)
             }
             catch (error) {
