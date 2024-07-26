@@ -58,10 +58,10 @@ function FeaturedRecipe() {
                                 <p className='text-lg'>{featuredItem.more.cook_time !== "0 minutes" ? featuredItem.more.cook_time : featuredItem.more.prep_time}</p>
                             </div>
                             <p className='mt-4'>
-                                {featuredItem.description.slice(0, 300)} ...<Link to="#" className='text-blue-500 hover:underline'>Read More</Link>
+                                {featuredItem.description.slice(0, 300)} ...<Link to={`/items/${featuredItem._id}`} className='text-blue-500 hover:underline'>Read More</Link>
                             </p>
                         </div>
-                        <button className='hover:bg-primary hover:text-white rounded-lg w-full md:w-32 h-12 border border-black hover:border-none transition ease-in duration-200 mb-12 sm:mt-4'>View Recipe</button>
+                        <Link to={`/items/${featuredItem._id}`}><button className='hover:bg-primary hover:text-white rounded-lg w-full md:w-32 h-12 border border-black hover:border-none transition ease-in duration-200 mb-12 sm:mt-4'>View Recipe</button></Link>
                         <span className='inline-block bg-primary text-white px-2 rounded-md py-0.5 absolute top-3 right-3 md:right-3 lg:top-3 lg:right-[630px]'>Featured</span>
                     </div>
                 </div>
