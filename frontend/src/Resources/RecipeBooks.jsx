@@ -16,11 +16,11 @@ function RecipeBooks() {
     };
 
     return (
-        <div className='py-16 pl-24'>
+        <div className='md:py-16 md:pl-24 pl-4'>
             <h1 className='text-3xl font-bold text-white'>Explore A wide Range of Cookbooks and Recipe Journals</h1>
             <div className='mt-4 flex gap-16 flex-wrap'>
                 {BookList.map((book, index) => (
-                    <div key={index} className='relative my-12 group w-60 flex items-center flex-col gap-6'>
+                    <div key={index} className='relative md:my-12 my-4 group w-60 flex items-center flex-col gap-6'>
                         <BookCover>
                             <img src={book.ImageSrc} alt={book.Title} className='w-full' />
                         </BookCover>
@@ -35,8 +35,8 @@ function RecipeBooks() {
             </div>
 
             {selectedBook && (
-                <div className='fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50'>
-                    <div className='bg-white p-8 rounded shadow-lg md:w-[500px]  w-96 relative'>
+                <div className='fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 md:p-0'>
+                    <div className='bg-white p-8 rounded shadow-lg md:w-[500px]  w-screen relative'>
                         <button
                             className='absolute text-xl top-2 right-2 bg-primary text-white rounded-md'
                             onClick={closeModal}
