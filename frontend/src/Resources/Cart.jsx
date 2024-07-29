@@ -56,19 +56,19 @@ function Cart() {
         <div className="text-white min-h-screen mb-16 w-full relative">
             {alertMessage && <Alert className='z-50' message={alertMessage} onClose={() => setAlertMessage("")} />}
             <div className={`md:my-16 md:ml-40 ${isCheckoutVisible ? 'opacity-25' : 'opacity-100'}`}>
-                {cartItems.length >0 && <h2 className="text-3xl font-bold mb-4">Cart ({cartItems.length})</h2>}
+                {cartItems.length > 0 && <h2 className="text-3xl font-bold mb-4">Cart ({cartItems.length})</h2>}
                 {cartItems.length === 0 ? (
                     <div>
-                    <div className='flex  items-center gap-4'>
-                        <p className='text-white text-left text-4xl'>Your cart is empty!</p>
-                        <FaOpencart className='text-7xl' />
-                    </div>
-                    <p className='text-white text-2xl'>Shop from Our store now</p>
+                        <div className='flex  items-center gap-4'>
+                            <p className='text-white text-left text-4xl'>Your cart is empty!</p>
+                            <FaOpencart className='text-7xl' />
+                        </div>
+                        <p className='text-white text-2xl'>Shop from Our store now</p>
                     </div>
                 ) : (
                     <>
                         <div>
-                            {chefNeedsItems.length>0 && <h3 className="text-2xl font-bold mb-2">Chef's Needs</h3>}
+                            {chefNeedsItems.length > 0 && <h3 className="text-2xl font-bold mb-2">Chef's Needs</h3>}
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                                 {chefNeedsItems.map((item, index) => {
                                     const originalIndex = cartItems.findIndex(cartItem => cartItem === item);
@@ -108,7 +108,7 @@ function Cart() {
                             </div>
                         </div>
                         <div>
-                            {recipeBooks.length >0 && <h3 className="text-2xl font-bold mb-2">Recipe Books</h3>}
+                            {recipeBooks.length > 0 && <h3 className="text-2xl font-bold mb-2">Recipe Books</h3>}
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {recipeBooks.map((item, index) => {
                                     const originalIndex = cartItems.findIndex(cartItem => cartItem === item);
@@ -152,12 +152,12 @@ function Cart() {
                         </div>
                     </>
                 )}
-                <button
+                {cartItems.length > 0 && <button
                     className="absolute top-0 right-4 text-white bg-green-600 rounded-full p-2"
                     onClick={handleCheckout}
                 >
                     Checkout
-                </button>
+                </button>}
             </div>
             {isCheckoutVisible && (
                 <div className="fixed inset-0 flex items-center justify-center z-50">
