@@ -12,7 +12,7 @@ import book10 from "../../assets/Resources/cookbooks/book10.jpg";
 const BookList = [
     {
         ImageSrc: book1,
-        Title: "Half Baked Harvest",
+        Name: "Half Baked Harvest",
         Author: "Tieghan Gerard",
         Price: 500,
         Description: "A collection of delicious recipes with stunning photography.",
@@ -24,7 +24,7 @@ const BookList = [
     },
     {
         ImageSrc: book2,
-        Title: "What's for Dessert",
+        Name: "What's for Dessert",
         Author: "Claire Saffitz",
         Price: 600,
         Description: "An inspiring dessert cookbook from the famed pastry chef.",
@@ -36,7 +36,7 @@ const BookList = [
     },
     {
         ImageSrc: book3,
-        Title: "Save Me The Plums",
+        Name: "Save Me The Plums",
         Author: "Ruth Reichl",
         Price: 550,
         Description: "A memoir of Ruth Reichl's time as editor-in-chief of Gourmet magazine.",
@@ -48,7 +48,7 @@ const BookList = [
     },
     {
         ImageSrc: book4,
-        Title: "How Not to Get Sick",
+        Name: "How Not to Get Sick",
         Author: "Michael Greger",
         Price: 350,
         Description: "A comprehensive guide to a plant-based diet for health.",
@@ -60,7 +60,7 @@ const BookList = [
     },
     {
         ImageSrc: book5,
-        Title: "The Galveston Diet",
+        Name: "The Galveston Diet",
         Author: "Dr. Mary Claire Haver",
         Price: 700,
         Description: "A scientifically backed guide to menopause and weight loss.",
@@ -72,7 +72,7 @@ const BookList = [
     },
     {
         ImageSrc: book6,
-        Title: "The Defined Dish",
+        Name: "The Defined Dish",
         Author: "Alex Snodgrass",
         Price: 1100,
         Description: "Healthy and wholesome recipes for every meal of the day.",
@@ -84,7 +84,7 @@ const BookList = [
     },
     {
         ImageSrc: book7,
-        Title: "Bite By Bite",
+        Name: "Bite By Bite",
         Author: "Peter Callahan",
         Price: 450,
         Description: "Innovative recipes for miniature foods and fun party snacks.",
@@ -96,7 +96,7 @@ const BookList = [
     },
     {
         ImageSrc: book8,
-        Title: "Aunt Bea's Ice Cream Cakes",
+        Name: "Aunt Bea's Ice Cream Cakes",
         Author: "Bea Ojakangas",
         Price: 300,
         Description: "A delightful collection of ice cream cake recipes.",
@@ -108,7 +108,7 @@ const BookList = [
     },
     {
         ImageSrc: book9,
-        Title: "The Indian Cookery Course",
+        Name: "The Indian Cookery Course",
         Author: "Monisha Bharadwaj",
         Price: 500,
         Description: "A comprehensive guide to Indian cooking and techniques.",
@@ -120,7 +120,7 @@ const BookList = [
     },
     {
         ImageSrc: book10,
-        Title: "Recipe Book",
+        Name: "Recipe Book",
         Author: "Ace McCloud",
         Price: 2800,
         Description: "A professional collection of recipes from renowned chefs.",
