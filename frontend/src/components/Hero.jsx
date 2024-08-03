@@ -7,15 +7,16 @@ function Hero() {
   useEffect(()=>{
     window.scrollTo(0, 0);
   },[])
+  
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <img
         src={BackgroundImg}
         alt="Background"
-        className="absolute top-0 left-0 h-full w-full object-cover"
+        className="absolute top-0 left-0 h-full md:w-full object-cover"
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 md:w-1/2 md:items-end md:ml-auto md:mr-16">
-        <p className="text-white text-2xl md:text-4xl text-center md:text-right p-4 rounded">
+        <p className="text-white text-2xl md:text-4xl text-center md:text-right md:p-4 p-2 rounded">
           Welcome to <span className="font-bold text-primary">Delicacies</span>,
           where every recipe is a journey through flavors, crafted to delight
           your taste buds and inspire your culinary adventures!

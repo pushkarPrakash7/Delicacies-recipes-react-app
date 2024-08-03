@@ -40,8 +40,45 @@ const getSingleItem = async(req,res)=>{
   }
 }
 
+const addNewItem = async (req, res) => {
+  const {
+    menuId,
+    name,
+    thumbnail_image,
+    description,
+    category,
+    instructions,
+    tags,
+    ingredients,
+    comments,
+    more,
+  } = req.body;
+
+  try {
+    const newItem = new Item({
+      menuId,
+      name,
+      thumbnail_image,
+      description,
+      category,
+      instructions,
+      tags,
+      ingredients,
+      comments,
+      more,
+    });
+
+    const savedItem = await newItem.save();
+    res.status(201).json(savedItem);
+  } catch (error) {
+    console.error("Error adding new item:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
     getAllItems,
     getSearchedItems,
-    getSingleItem
+    getSingleItem,
+    addNewItem,
 }

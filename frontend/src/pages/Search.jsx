@@ -16,6 +16,7 @@ function Search() {
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
+        console.log(params);
         const queryParams = params.get('query');
         if (queryParams) {
             setQuery(queryParams);
@@ -40,6 +41,7 @@ function Search() {
         fetchAllRecipes();
     }, []);
     console.log(allRecipes);
+
     const fetchItems = async () => {
         setLoading(true);
         setError(null);
@@ -57,7 +59,7 @@ function Search() {
         if (query) {
             fetchItems();
         } else {
-            setResult(allRecipes); // Display all recipes if search query is empty
+            setResult(allRecipes); 
         }
     };
 
@@ -66,7 +68,7 @@ function Search() {
     };
 
     return (
-        <div className="my-16 md:my-24 max-h-full pb-8 lg:mx-16 sm:mx-8 bg-black md:rounded-2xl">
+        <div className="my-16 md:my-24 max-h-full pb-8 lg:mx-16 sm:mx-8 bg-gray-300 md:rounded-2xl">
             <h1 className='text-center text-primary text-4xl font-semibold py-8'>Search For your Recipe here</h1>
             <div className='flex justify-center'>
                 <input 

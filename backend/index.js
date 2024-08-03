@@ -20,7 +20,6 @@ main()
   .then(() => console.log("Mongodb Connected Successfully!"))
   .catch((err) => console.log(err));
 
-// routes
 const ItemRoutes = require("./src/routes/ItemRoutes.js");
 const CategoryRoutes = require("./src/routes/CategoryRoutes.js");
 

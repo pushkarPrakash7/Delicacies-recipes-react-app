@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CatgeorySchema = new mongoose.Schema({
+const CategorySchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -12,5 +12,5 @@ const CatgeorySchema = new mongoose.Schema({
     timestamps: true
 });
 
-const Category = mongoose.model("Category", CatgeorySchema);
+const Category = mongoose.model("Category", CategorySchema);
 module.exports = Category;

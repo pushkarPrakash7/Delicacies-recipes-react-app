@@ -14,6 +14,7 @@ import Resources from './pages/Resources.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import { base_url } from './Links/links.js';
+import AddRecipeForm from './components/AddRecipeForm.jsx';
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />
+      },
+      {
+        path: "/addNewRecipe",
+        element: <AddRecipeForm />
       }
     ]
   },
